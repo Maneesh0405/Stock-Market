@@ -27,7 +27,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => subscription.unsubscribe();
   }, []);
 
-  const [devEmail, setDevEmail] = useState(localStorage.getItem("dev_logged_in"));
+  const [devEmail, setDevEmail] = useState(typeof window !== "undefined" ? localStorage.getItem("dev_logged_in") : null);
 
   useEffect(() => {
     const handleAuth = () => setDevEmail(localStorage.getItem("dev_logged_in"));
