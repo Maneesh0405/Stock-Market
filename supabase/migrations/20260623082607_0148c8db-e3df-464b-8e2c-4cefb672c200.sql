@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "leaderboard read" ON public.paper_accounts;
